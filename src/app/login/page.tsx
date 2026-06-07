@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { createSupabaseClient } from '@/lib/supabase';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -32,14 +33,14 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-sm">
-
+  
         {/* Logo */}
         <div className="flex items-center gap-2 justify-center mb-8">
           <div className="w-8 h-8 bg-teal-500 rounded-lg flex items-center justify-center">
             <span className="text-white text-sm font-bold">T</span>
           </div>
           <span className="font-semibold text-gray-900">
-            Tausug <span className="text-teal-500">Dictionary</span>
+            Tausug <span className="text-teal-500">Diksyunaryo</span>
           </span>
         </div>
 
@@ -88,6 +89,16 @@ export default function LoginPage() {
             </button>
           </div>
         )}
+
+                {/* Back link */}
+                <div className="mb-6 text-center">
+          <Link
+            href="/"
+            className="text-sm text-gray-400 hover:text-gray-700 transition-colors"
+          >
+            ← Back to dictionary
+          </Link>
+        </div>
 
       </div>
     </div>
